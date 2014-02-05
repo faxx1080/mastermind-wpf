@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MastermindBoardUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="50" Width="518" BorderBrush="Black" BorderThickness="1">
+    <Canvas>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="10" Canvas.Top="10" Width="30" x:Name="b01" Tag="1"/>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="45" Canvas.Top="10" Width="30" x:Name="b02" Tag="2"/>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="80" Canvas.Top="10" Width="30" x:Name="b03" Tag="3"/>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="115" Canvas.Top="10" Width="30" x:Name="b04" Tag="4"/>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="150" Canvas.Top="10" Width="30" x:Name="b05" Tag="5"/>
+        <Ellipse Fill="White"  Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="185" Canvas.Top="10" Width="30" x:Name="b06" Tag="6"/>
+        <Ellipse Fill="White"  Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="220" Canvas.Top="10" Width="30" x:Name="b07" Tag="7"/>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="255" Canvas.Top="10" Width="30" x:Name="b08" Tag="8"/>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="290" Canvas.Top="10" Width="30" x:Name="b09" Tag="9"/>
+        <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Height="30" Canvas.Left="325" Canvas.Top="10" Width="30" x:Name="b10" Tag="10"/>
+        <Path Stroke="Black" StrokeThickness="2" Canvas.Left="365">
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure StartPoint="0,0">
+                        <LineSegment Point="0,50" />
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <Border Background="White" x:Name="o01" Tag="1" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="375" Canvas.Top="7" Width="15"/>
+        <Border Background="White" x:Name="o06" Tag="6" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="375" Canvas.Bottom="7" Width="15"/>
+        <Border Background="White" x:Name="o02" Tag="2" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="395" Canvas.Top="7" Width="15"/>
+        <Border Background="White" x:Name="o07" Tag="7" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="395" Canvas.Bottom="7" Width="15"/>
+        <Border Background="White" x:Name="o08" Tag="8" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="415" Canvas.Bottom="7" Width="15"/>
+        <Border Background="White" x:Name="o09" Tag="9" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="435" Canvas.Bottom="7" Width="15"/>
+        <Border Background="White" x:Name="o10" Tag="10" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="455" Canvas.Bottom="7" Width="15"/>
+        <Border Background="White" x:Name="o03" Tag="3" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="415" Canvas.Top="7" Width="15"/>
+        <Border Background="White" x:Name="o04" Tag="4" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="435" Canvas.Top="7" Width="15"/>
+        <Border Background="White" x:Name="o05" Tag="5" BorderBrush="Black" BorderThickness="1" Height="15" Canvas.Left="455" Canvas.Top="7" Width="15"/>
+        <TextBlock x:Name="windowTurnNumber" Canvas.Right="15" TextWrapping="Wrap" Canvas.Top="7" FontSize="24"/>
+    </Canvas>
+</UserControl>

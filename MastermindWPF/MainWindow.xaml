@@ -1,0 +1,96 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MastermindWPF"
+    x:Class="MainWindow" UseLayoutRounding="True"
+    Title="Mastermind" Height="750" Width="580" Icon="icon.ico" WindowStartupLocation="CenterScreen" MinWidth="580" MinHeight="750">
+    <Grid>
+        <Grid.Background>
+            <!--Makes gradient background-->
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FFC3C3C3" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!--Cheats-->
+        <Rectangle Tag="0" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,0,0,0"/>
+        <Rectangle Tag="1" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
+        <Rectangle Tag="2" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+        <Rectangle Tag="3" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,0,0,0"/>
+        <Rectangle Tag="4" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,0,0,0"/>
+        <Rectangle Tag="5" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,0,0,0"/>
+        <Rectangle Tag="6" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,0,0,0"/>
+        <Rectangle Tag="7" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,0,0,0"/>
+        <Rectangle Tag="8" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,0,0,0"/>
+        <Rectangle Tag="9" Width="5" Height="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,0,0,0"/>
+        <!--EndCheats-->
+        <StatusBar Height="34" VerticalAlignment="Bottom" x:Name="stBar">
+            <Label x:Name="stbLabel" Content="Hello!"/>
+            <!-- Rectangles hold answer at the end. -->
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+            <Rectangle Height="20" Width="20"></Rectangle>
+        </StatusBar>
+        <!--How Many Pegs?-->
+        <Slider x:Name="pegsSlider" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="161" SmallChange="0" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Minimum="4"/>
+        <Label HorizontalAlignment="Left" Margin="227,8,0,0" VerticalAlignment="Top" Content="{Binding Value, ElementName=pegsSlider}"/>
+        <Label Content="Pegs:" HorizontalAlignment="Left" Margin="176,8,0,0" VerticalAlignment="Top"/>
+        <!--How Many Pegs?-->
+        <Slider x:Name="colorsSlider" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="161" SmallChange="0" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Minimum="{Binding Value, ElementName=pegsSlider}" Maximum="12"/>
+        <Label HorizontalAlignment="Left" Margin="227,34,0,0" VerticalAlignment="Top" Content="{Binding Value, ElementName=colorsSlider}"/>
+        <Label Content="Colors:" HorizontalAlignment="Left" Margin="176,34,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnNewGame" Content="New Game" HorizontalAlignment="Left" Margin="257,19,0,0" VerticalAlignment="Top" Width="124" Height="30"/>
+        <Label x:Name="wellLbl" Content="Color Well (Click to choose a color to drop)" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="16" Visibility="Hidden"/>
+        <!-- The rectangle "color wells" that hold the colors to drop on the circles. -->
+        <Border x:Name="well01" Background="Red" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="39,104,0,0" VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well02" Background="Green" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="79,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well03" Background="Blue" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="119,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well04" Background="Yellow" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="159,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well05" Background="Orange" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="199,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well06" Background="Purple" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="239,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well07" Background="DeepSkyBlue" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left" Height="28" Margin="279,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well08" Background="MidnightBlue" BorderBrush="LightGray" BorderThickness="1"  HorizontalAlignment="Left" Height="28" Margin="319,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well09" Background="Gold" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="359,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well10" Background="SlateGray" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="399,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well11" Background="SlateBlue" BorderBrush="Black"  BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="439,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <Border x:Name="well12" Background="LightCyan" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="28" Margin="479,104,0,0"  VerticalAlignment="Top" Width="35" Visibility="Hidden"/>
+        <CheckBox x:Name="chkDup" Content="Allow Duplicates" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnCheck" IsEnabled="False" Click="CheckRowClick" Content="Check Row" HorizontalAlignment="Left" Margin="386,19,0,0" VerticalAlignment="Top" Width="106" Height="30"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="20,137,20,55" x:Name="thisGameGrid">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--This holds the game boards in place, in a non-pixel dependent layout. If you maximize the form, the user controls scale with it.-->
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="55*"/>
+                </Grid.RowDefinitions>
+                <!-- the actual game board objects; see the related file MasterMindBoardUI.xaml for what's in them -->
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board01" Tag="1" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" VerticalAlignment="Center" turnNumber="1" />
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board02" Tag="2" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="1" VerticalAlignment="Center" turnNumber="2"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board03" Tag="3" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="2" VerticalAlignment="Center" turnNumber="3"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board04" Tag="4" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="3" VerticalAlignment="Center" turnNumber="4"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board05" Tag="5" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="4" VerticalAlignment="Center" turnNumber="5"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board06" Tag="6" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="5" VerticalAlignment="Center" turnNumber="6"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board07" Tag="7" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="6" VerticalAlignment="Center" turnNumber="7"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board08" Tag="8" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="7" VerticalAlignment="Center" turnNumber="8"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board09" Tag="9" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="8" VerticalAlignment="Center" turnNumber="9"/>
+                <local:MastermindBoardUI Visibility="Hidden" x:Name="board10" Tag="10" HorizontalAlignment="Center" Height="50" Grid.RowSpan="1" Grid.Row="9" VerticalAlignment="Center" turnNumber="10"/>
+            </Grid>
+        </Border>
+        <Button Content="Help!" HorizontalAlignment="Left" Margin="500,19,0,0" VerticalAlignment="Top" Width="55" Height="30" Click="Button_Click_1"/>
+    </Grid>
+</Window>

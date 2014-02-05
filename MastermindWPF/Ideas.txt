@@ -1,0 +1,38 @@
+﻿Order: create array of colors for computer based on input.
+person inputs row of colors
+compare to final.
+Traverse of cpuArray:
+	Look at identical player spot, if identical, black and done, remove.
+	if remove, --index
+traverse again (on modded ones)
+	take color, find in cpuArr. if yes, remove both + add white.
+	if remove, --index
+if 4 black, game won.
+if 10th turn and not 4 black, game lost.
+
+Colors:
+Red
+Green
+Blue
+Yellow
+Orange
+Purple
+DeepSkyBlue
+MidnightBlue
+Gold
+SlateGray
+SlateBlue
+LightCyan
+
+---
+10/27/2012 8:38 PM
+Code Lines
+
+175
+41
+195
+90
+29
+∑(above)=501
+
+<!--xmlns:MastermindWPF="clr-namespace:MastermindWPF.MastermindWPF"-->
