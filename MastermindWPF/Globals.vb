@@ -1,4 +1,6 @@
-﻿Module Globals
+﻿' Author: Frank Migliorino
+
+Module Globals
 
     Public allColors As Color() =
     {Colors.Red, Colors.Green, Colors.Blue, Colors.Yellow,

@@ -1,4 +1,6 @@
-﻿Class MainWindow
+﻿' Author: Frank Migliorino
+
+Class MainWindow
 
     Public IsDuplicatesAllowed As Boolean
     Public currentColors As Color()

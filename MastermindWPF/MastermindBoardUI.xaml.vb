@@ -1,4 +1,6 @@
-﻿Public Class MastermindBoardUI
+﻿' Author: Frank Migliorino
+
+Public Class MastermindBoardUI
 
     Private thisColors As Color()
     Private thisPegsMax As Integer
